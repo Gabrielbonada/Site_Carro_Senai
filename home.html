@@ -2,13 +2,12 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Automax-revenda</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="home.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -18,14 +17,16 @@
             <nav>
                 <button>Inicio</button>
                 <button>Estoque</button>
-                <button>Financiamento </button>
+                <button>Financiamento</button>
                 <button>Contato</button>
             </nav>
-            <button id="zap">whatssap<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+            <button id="zap">
+                whatssap<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                     class="bi bi-whatsapp" viewBox="0 0 16 16">
                     <path
                         d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
-                </svg> </button>
+                </svg>
+            </button>
         </div>
     </header>
     <section class="apresentacao">
@@ -45,23 +46,46 @@
 
     <section class="pesquisa">
         <div class="search-bar">
-            <input type="text" id="search" placeholder="Buscar por marca, modelo...">
+            <input type="text" id="search" placeholder="Buscar por marca, modelo..." />
             <select name="" id="">
-                <option value=""> bmw</option>todas marcass
+                <option value="">Bmw</option>
+                todas marcass
             </select>
             <select name="" id=""></select>
-            <button onclick="buscar()"> Buscar </button>
+            <button onclick="buscar()">Buscar</button>
         </div>
     </section>
 
     <main>
-        
         <section class="titulo-galeria">
             <h2>Nossos veiculos</h2>
             <div class="juncao-card">
                 <div class="card-veiculo">
                     <div class="ano-etiqueta">2023</div>
-                    <img src="assets/carro1.webp" alt="BMW X5">
+                    <img src="assets/carro1.webp" alt="BMW X5" />
+                    <div class="conteudo-card">
+                        <h3>BMW X5</h3>
+                        <p class="ano">2023</p>
+                        <p class="preco">R$ 450.000,00</p>
+                        <div class="info">
+                            <span>📍 15.000 km</span>
+                            <span>⛽ Gasolina</span>
+                        </div>
+                        <div class="info">
+                            <span>⚙️ Automático</span>
+                            <span>🎨 Preto</span>
+                        </div>
+                        <div class="botoes">
+                            <button id="formulariodecompra" class="detalhes" onclick="abrirFormulario()">
+                                Formulario de compra
+                            </button>
+                            <button class="whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-veiculo">
+                    <div class="ano-etiqueta">2023</div>
+                    <img src="assets/carro2.webp" alt="BMW X5" />
                     <div class="conteudo-card">
                         <h3>BMW X5</h3>
                         <p class="ano">2023</p>
@@ -82,7 +106,7 @@
                 </div>
                 <div class="card-veiculo">
                     <div class="ano-etiqueta">2023</div>
-                    <img src="assets/carro2.webp" alt="BMW X5">
+                    <img src="assets/carro3.webp" alt="BMW X5" />
                     <div class="conteudo-card">
                         <h3>BMW X5</h3>
                         <p class="ano">2023</p>
@@ -103,7 +127,7 @@
                 </div>
                 <div class="card-veiculo">
                     <div class="ano-etiqueta">2023</div>
-                    <img src="assets/carro2.webp" alt="BMW X5">
+                    <img src="assets/carro4.webp" alt="BMW X5" />
                     <div class="conteudo-card">
                         <h3>BMW X5</h3>
                         <p class="ano">2023</p>
@@ -124,7 +148,7 @@
                 </div>
                 <div class="card-veiculo">
                     <div class="ano-etiqueta">2023</div>
-                    <img src="assets/carro2.webp" alt="BMW X5">
+                    <img src="assets/carro5.webp" alt="BMW X5" />
                     <div class="conteudo-card">
                         <h3>BMW X5</h3>
                         <p class="ano">2023</p>
@@ -143,33 +167,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-veiculo">
-                    <div class="ano-etiqueta">2023</div>
-                    <img src="assets/carro2.webp" alt="BMW X5">
-                    <div class="conteudo-card">
-                        <h3>BMW X5</h3>
-                        <p class="ano">2023</p>
-                        <p class="preco">R$ 450.000,00</p>
-                        <div class="info">
-                            <span>📍 15.000 km</span>
-                            <span>⛽ Gasolina</span>
-                        </div>
-                        <div class="info">
-                            <span>⚙️ Automático</span>
-                            <span>🎨 Preto</span>
-                        </div>
-                        <div class="botoes">
-                            <button class="detalhes">Ver Detalhes</button>
-                            <button class="whatsapp">WhatsApp</button>
-                        </div>
-                    </div>
-                </div>
-
-
             </div>
-
-
-
 
             <!--<div class="juncao-galeria">
                 <div class="card-geral"><img src="/Site_Carro_Senai/assets/carro1.webp" alt=""></div>
@@ -179,9 +177,45 @@
                 <div class="card-geral"><img src="/Site_Carro_Senai/assets/carro5.webp" alt=""></div>
             </div>-->
         </section>
+        <section class="formulariodecompra">
+            <div id="form-compra" style="display: none;">
+                <h2>Formulário de Compra</h2>
+                <form>
+                    <div class="campo-form">
+                        <label for="nome">Nome do comprador:</label>
+                        <input type="text" id="nome" name="nome" />
+                    </div>
+                    <div class="campo-form">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" />
+                    </div>
+                    <div class="campo-form">
+                        <label for="carro">Carro de Interesse:</label>
+                        <input type="text" id="carro" name="carro" />
+                    </div>
+                     <div class="campo-form">
+                        <label for="carro"></label>
+                        <input type="text" id="carro" name="carro" />
+                    </div>
+                     <div class="campo-form">
+                        <label for="carro">Carro de Interesse:</label>
+                        <input type="text" id="carro" name="carro" />
+                    </div>
+                     <div class="campo-form">
+                        <label for="carro">Carro de Interesse:</label>
+                        <input type="text" id="carro" name="carro" />
+                    </div>
+                    <div class="secao-botao">
+                        <button type="submit">Enviar</button>
+                        <button type="button" onclick="fecharFormulario()">Fechar</button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
     </main>
     <!--inicio footer-->
-    <footer class="fotter">
+    <footer class="footer">
         <div class="footer-container">
             <div class="contato">
                 <h3>🚗<strong>AutoMax</strong>></h3>
@@ -202,13 +236,13 @@
             <div class="footer-col">
                 <h4>Contato</h4>
                 <ul>
-                    <li>📞  (11) 9999-9999</li>
-                     <li>📧 contato@automax.com.br</li>
-                      <li>📍 Av. Principal, 1234<br>Centro - São Paulo/SP</li>
+                    <li>📞 (11) 9999-9999</li>
+                    <li>📧 contato@automax.com.br</li>
+                    <li>📍 Av. Principal, 1234<br />Centro - São Paulo/SP</li>
                 </ul>
                 <div class="footer-icons">
                     <span>📱</span>
-                      <span>🖥️</span>
+                    <span>🖥️</span>
                     <span>📷</span>
                 </div>
             </div>
@@ -216,7 +250,7 @@
         <hr />
         <div class="footer-bottom">
             <p>&copy; 2023 AutoMax. Todos os direitos reservados.</p>
-            </div>
+        </div>
     </footer>
     <!--fim footer-->
     <script src="home.js"></script>
