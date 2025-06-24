@@ -17,8 +17,8 @@
             <nav>
                 <button>Inicio</button>
                 <button>Estoque</button>
-                <button>Financiamento</button>
                 <button>Contato</button>
+                 <button id="darkModeToggle">🌙</button>
             </nav>
             <button id="zap">
                 whatssap<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -49,6 +49,8 @@
             <input type="text" id="search" placeholder="Buscar por marca, modelo..." />
             <select name="" id="">
                 <option value="">Bmw</option>
+                <option value="">Mercedes</option>
+                <option value="">Audi</option>
                 todas marcass
             </select>
             <select name="" id=""></select>
@@ -61,12 +63,12 @@
             <h2>Nossos veiculos</h2>
             <div class="juncao-card">
                 <div class="card-veiculo">
-                    <div class="ano-etiqueta">2023</div>
+                    <div class="ano-etiqueta">2020</div>
                     <img src="assets/carro1.webp" alt="BMW X5" />
                     <div class="conteudo-card">
                         <h3>BMW X5</h3>
-                        <p class="ano">2023</p>
-                        <p class="preco">R$ 450.000,00</p>
+                        <p class="ano">2020</p>
+                        <p class="preco">R$ 250.000,00</p>
                         <div class="info">
                             <span>📍 15.000 km</span>
                             <span>⛽ Gasolina</span>
@@ -76,20 +78,18 @@
                             <span>🎨 Preto</span>
                         </div>
                         <div class="botoes">
-                            <button id="formulariodecompra" class="detalhes" onclick="abrirFormulario()">
-                                Formulario de compra
-                            </button>
+                            <button class="detalhes" onclick="abrirModal()">Formulario de compra</button>
                             <button class="whatsapp">WhatsApp</button>
                         </div>
                     </div>
                 </div>
                 <div class="card-veiculo">
-                    <div class="ano-etiqueta">2023</div>
+                    <div class="ano-etiqueta">2021</div>
                     <img src="assets/carro2.webp" alt="BMW X5" />
                     <div class="conteudo-card">
-                        <h3>BMW X5</h3>
-                        <p class="ano">2023</p>
-                        <p class="preco">R$ 450.000,00</p>
+                        <h3>Mercedes</h3>
+                        <p class="ano">2021</p>
+                        <p class="preco">R$ 100.000,00</p>
                         <div class="info">
                             <span>📍 15.000 km</span>
                             <span>⛽ Gasolina</span>
@@ -131,6 +131,27 @@
                     <div class="conteudo-card">
                         <h3>BMW X5</h3>
                         <p class="ano">2023</p>
+                        <p class="preco">R$ 50.000,00</p>
+                        <div class="info">
+                            <span>📍 15.000 km</span>
+                            <span>⛽ Gasolina</span>
+                        </div>
+                        <div class="info">
+                            <span>⚙️ Automático</span>
+                            <span>🎨 Preto</span>
+                        </div>
+                        <div class="botoes">
+                            <button class="detalhes">Ver Detalhes</button>
+                            <button class="whatsapp">WhatsApp</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-veiculo">
+                    <div class="ano-etiqueta">2023</div>
+                    <img src="assets/carro5.webp" alt="BMW X5" />
+                    <div class="conteudo-card">
+                        <h3>BMW X5</h3>
+                        <p class="ano">2023</p>
                         <p class="preco">R$ 450.000,00</p>
                         <div class="info">
                             <span>📍 15.000 km</span>
@@ -169,50 +190,49 @@
                 </div>
             </div>
 
-            <!--<div class="juncao-galeria">
-                <div class="card-geral"><img src="/Site_Carro_Senai/assets/carro1.webp" alt=""></div>
-                <div class="card-geral"><img src="/Site_Carro_Senai/assets/carro2.webp" alt=""></div>
-                <div class="card-geral"><img src="/Site_Carro_Senai/assets/carro3.webp" alt=""></div>
-                <div class="card-geral"><img src="/Site_Carro_Senai/assets/carro4.webp" alt=""></div>
-                <div class="card-geral"><img src="/Site_Carro_Senai/assets/carro5.webp" alt=""></div>
-            </div>-->
+
         </section>
-        <section class="formulariodecompra">
-            <div id="form-compra" style="display: none;">
+        <div id="modal-compra" class="modal">
+            <div class="modal-conteudo">
+                <span class="fechar" onclick="fecharModal()">&times;</span>
                 <h2>Formulário de Compra</h2>
                 <form>
-                    <div class="campo-form">
-                        <label for="nome">Nome do comprador:</label>
-                        <input type="text" id="nome" name="nome" />
-                    </div>
-                    <div class="campo-form">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" />
-                    </div>
-                    <div class="campo-form">
-                        <label for="carro">Carro de Interesse:</label>
-                        <input type="text" id="carro" name="carro" />
-                    </div>
-                     <div class="campo-form">
-                        <label for="carro"></label>
-                        <input type="text" id="carro" name="carro" />
-                    </div>
-                     <div class="campo-form">
-                        <label for="carro">Carro de Interesse:</label>
-                        <input type="text" id="carro" name="carro" />
-                    </div>
-                     <div class="campo-form">
-                        <label for="carro">Carro de Interesse:</label>
-                        <input type="text" id="carro" name="carro" />
-                    </div>
-                    <div class="secao-botao">
-                        <button type="submit">Enviar</button>
-                        <button type="button" onclick="fecharFormulario()">Fechar</button>
+                    <div class="linha1">
+                        <div class="campo-form">
+                            <label for="nome">Nome do comprador:</label>
+                            <input type="text" id="nome" name="nome" required />
+                        </div>
+                        <div class="campo-form">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required />
+                        </div>
+                        <div class="campo-form">
+                            <label for="carro">Carro de Interesse:</label>
+                            <input type="text" id="carro" name="carro" required />
+                        </div>
                     </div>
 
+                    <div class="linha2">
+                        <div class="campo-form">
+                            <label for="nome">Nome do comprador:</label>
+                            <input type="text" id="nome" name="nome" required />
+                        </div>
+                        <div class="campo-form">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required />
+                        </div>
+                        <div class="campo-form">
+                            <label for="carro">Carro de Interesse:</label>
+                            <input type="text" id="carro" name="carro" required />
+                        </div>
+                    </div>
                 </form>
+                <div class="secao-botao">
+                    <button type="submit">Enviar</button>
+                    <button type="button" onclick="fecharModal()">Fechar</button>
+                </div>
             </div>
-        </section>
+        </div>
     </main>
     <!--inicio footer-->
     <footer class="footer">

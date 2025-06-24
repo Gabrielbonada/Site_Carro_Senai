@@ -7,26 +7,31 @@ function buscar(){
     // Aqui você pode adicionar a lógica para buscar os carros com base nos critérios
 }
 
- function abrirFormulario() {
-    const form = document.getElementById("form-compra");
-    form.style.display = "block";
-    form.scrollIntoView({ behavior: "smooth" });
+function abrirModal() {
+  document.getElementById("modal-compra").style.display = "block";
+}
+
+function fecharModal() {
+  document.getElementById("modal-compra").style.display = "none";
+}
+
+// Fechar o modal ao clicar fora do conteúdo
+window.onclick = function (event) {
+  const modal = document.getElementById("modal-compra");
+  if (event.target === modal) {
+    modal.style.display = "none";
   }
+};
+const toggleButton = document.getElementById("darkModeToggle");
+const body = document.body;
 
-  // Função para fechar o formulário
-  function fecharFormulario() {
-    const form = document.getElementById("form-compra");
-    form.style.display = "none";
+toggleButton.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
+  
+  // Altera o ícone do botão
+  if (body.classList.contains("dark-mode")) {
+    toggleButton.textContent = "☀️";
+  } else {
+    toggleButton.textContent = "🌙";
   }
-
-  // Ativar evento nos botões com classe "detalhes"
-  document.addEventListener("DOMContentLoaded", () => {
-    const botoes = document.querySelectorAll(".detalhes");
-
-    botoes.forEach((botao) => {
-      botao.addEventListener("click", () => {
-        // Aqui você pode futuramente preencher o input de carro automaticamente
-        abrirFormulario();
-      });
-    });
-  });
+});
