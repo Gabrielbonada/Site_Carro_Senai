@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo completo de carros - AutoShop">
+    <title>Carros - AutoShop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-car"></i>
+                    <span>AutoShop</span>
+                </div>
+                
+                <nav class="nav" id="mainNav">
+                    <a href="index.html" class="nav-link">Início</a>
+                    <a href="carros.html" class="nav-link active">Carros</a>
+                    <a href="sobre.html" class="nav-link">Sobre</a>
+                    <a href="contato.html" class="nav-link">Contato</a>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="btn-icon" id="themeToggle" aria-label="Alternar tema">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="btn-icon" id="cartBtn" aria-label="Carrinho de compras">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </button>
+                    <button class="btn-icon" id="accessibilityBtn" aria-label="Configurações de acessibilidade">
+                        <i class="fas fa-universal-access"></i>
+                    </button>
+                    <button class="btn-primary" id="loginBtn">Entrar</button>
+                    <button class="btn-menu" id="menuToggle" aria-label="Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <section class="page-header">
+            <div class="container">
+                <h1>Nossos Carros</h1>
+                <p><span id="totalCars">0</span> carros encontrados</p>
+            </div>
+        </section>
+
+        <section class="catalog">
+            <div class="container">
+                <div class="catalog-layout">
+                    <!-- Filtros -->
+                    <aside class="filters">
+                        <h2>Filtros</h2>
+                        
+                        <div class="filter-group">
+                            <label for="searchInput">
+                                <i class="fas fa-search"></i>
+                                Buscar
+                            </label>
+                            <input type="text" id="searchInput" placeholder="Buscar por marca ou modelo...">
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="brandFilter">Marca</label>
+                            <input type="text" id="brandFilter" placeholder="Ex: Toyota">
+                        </div>
+
+                        <div class="filter-group">
+                            <label>Preço</label>
+                            <div class="filter-row">
+                                <input type="number" id="minPrice" placeholder="Mínimo">
+                                <input type="number" id="maxPrice" placeholder="Máximo">
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <label>Ano</label>
+                            <div class="filter-row">
+                                <input type="number" id="minYear" placeholder="De">
+                                <input type="number" id="maxYear" placeholder="Até">
+                            </div>
+                        </div>
+
+                        <button class="btn-secondary btn-block" id="clearFilters">Limpar Filtros</button>
+                    </aside>
+
+                    <!-- Grid de Carros -->
+                    <div class="catalog-content">
+                        <div class="cars-grid" id="carsGrid">
+                            <!-- Carros serão inseridos via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>AutoShop</h3>
+                    <p>Encontre o carro dos seus sonhos com as melhores ofertas e condições de pagamento.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="carros.html">Carros</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (11) 1234-5678</li>
+                        <li><i class="fas fa-envelope"></i> contato@autoshop.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> São Paulo, SP</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AutoShop. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Carrinho -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Carrinho de Compras</h2>
+                <button class="btn-close" id="closeCart" aria-label="Fechar">&times;</button>
+            </div>
+            <div class="modal-body" id="cartItems">
+                <!-- Itens do carrinho -->
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">R$ 0,00</span>
+                </div>
+                <button class="btn-primary btn-block" id="checkoutBtn">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Acessibilidade -->
+    <div class="modal" id="accessibilityModal">
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h2>Acessibilidade</h2>
+                <button class="btn-close" id="closeAccessibility" aria-label="Fechar">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="accessibility-option">
+                    <label for="fontSize">Tamanho da Fonte:</label>
+                    <div class="btn-group">
+                        <button class="btn-secondary btn-sm" data-font="small">Pequeno</button>
+                        <button class="btn-secondary btn-sm active" data-font="medium">Médio</button>
+                        <button class="btn-secondary btn-sm" data-font="large">Grande</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/catalog.js"></script>
+</body>
+</html>
